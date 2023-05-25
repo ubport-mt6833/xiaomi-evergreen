@@ -2,6 +2,7 @@ deviceinfo_name="POCO M4 Pro 5G"
 deviceinfo_manufacturer="Xiaomi"
 deviceinfo_codename="evergreen"
 deviceinfo_arch="aarch64"
+deviceinfo_halium_version=11
 deviceinfo_kernel_source="https://gitlab.com/ubport-mt6833/kernel-xiaomi-mt6833.git"
 deviceinfo_kernel_source_branch="halium-11.0"
 deviceinfo_kernel_defconfig="evergreen_defconfig"
