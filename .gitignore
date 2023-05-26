@@ -1,0 +1,8 @@
+out/
+workdir/
+
+build/
+
+*.log
+
+ota/
