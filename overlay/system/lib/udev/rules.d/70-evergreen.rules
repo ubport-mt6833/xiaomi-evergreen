@@ -121,3 +121,7 @@ ACTION=="add", KERNEL=="kick_powerkey", OWNER="system", GROUP="system", MODE="06
 ACTION=="add", KERNEL=="ttyACM0", OWNER="radio", GROUP="radio", MODE="0660"
 ACTION=="add", KERNEL=="elliptic0", OWNER="system", GROUP="system", MODE="0644"
 ACTION=="add", KERNEL=="elliptic1", OWNER="system", GROUP="system", MODE="0644"
+
+# Set flashlight_torch permissions so indicator-power can access it
+ACTION=="add|change", SUBSYSTEM=="flashlight_core", KERNEL=="flashlight", RUN+="/bin/chgrp android_media /sys/class/flashlight_core/%k/flashlight_torch"
+ACTION=="add|change", SUBSYSTEM=="flashlight_core", KERNEL=="flashlight", RUN+="/bin/chmod g+w /sys/class/flashlight_core/%k/flashlight_torch"
