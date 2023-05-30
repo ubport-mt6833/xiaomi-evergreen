@@ -58,7 +58,8 @@ setup_boot() {
 		mkdir -p $GADGET_DIR/configs/$CONFIG_NAME/strings/0x409
 	fi
 
-	write $GADGET_DIR/idVendor 0x18D1
+	write $GADGET_DIR/idVendor 0x0E8D
+	write $GADGET_DIR/idProduct 0x2d00
 	write $GADGET_DIR/bcdDevice 0x0223
 	write $GADGET_DIR/bcdUSB 0x0200
 	write $GADGET_DIR/os_desc/use 1
@@ -66,7 +67,7 @@ setup_boot() {
 	write $GADGET_DIR/os_desc/qw_sign "MSFT100"
 	write $GADGET_DIR/strings/0x409/serialnumber $SERIALNUMBER
 	write $GADGET_DIR/strings/0x409/manufacturer $MANUFACTURER
-	write $GADGET_DIR/strings/0x409/product $PRODUCT
+	write $GADGET_DIR/strings/0x409/product "$PRODUCT"
 	mkdir -p $GADGET_DIR/functions/mtp.gs0
 	mkdir -p $GADGET_DIR/functions/ffs.adb
 	symlink $GADGET_DIR/configs/$CONFIG_NAME $GADGET_DIR/os_desc/$CONFIG_NAME
