@@ -1,0 +1,18 @@
+evergreen:
+  Vendor: Xiaomi
+  PrettyName: POCO M4 Pro 5G
+  DeviceType: phone
+  GridUnit: 21
+  SupportedOrientations:
+    - Portrait
+    - Landscape
+    - InvertedLandscape
+  MirAndroidPlatformServerPartialUpdates:
+    - false
+  MirAndroidPlatformServerBackpressure:
+    - true
+  MirAndroidPlatformServerEglSync:
+    - true
+  MirAndroidPlatformClientEglFlush:
+    - all
+  VibrateDurationExtraMs: 40
