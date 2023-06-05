@@ -89,3 +89,24 @@ jobs:
           path: |
             out/boot.img
             out/ubuntu.img.xz
+
+  release-build:
+      needs: [devel-flashable]
+      runs-on: ubuntu-20.04
+
+      steps:
+        - uses: actions/download-artifact@v3
+          with:
+            name: images-${{ matrix.device }}-${{ matrix.release }}
+            path: out
+
+        - name: release
+          uses: marvinpinto/action-automatic-releases@6273874b61ebc8c71f1a61b2d98e234cf389b303
+          with:
+            title: Ubuntu Touch ${{ matrix.release }}
+            automatic_release_tag: ${{ matrix.release }}
+            prerelease: false
+            draft: false
+            files: |
+              out/*
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
