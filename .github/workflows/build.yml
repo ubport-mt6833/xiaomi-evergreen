@@ -94,6 +94,11 @@ jobs:
       needs: [devel-flashable]
       runs-on: ubuntu-20.04
 
+      strategy:
+        matrix:
+          device: [evergreen]
+          release: [xenial, focal]
+
       steps:
         - uses: actions/download-artifact@v3
           with:
