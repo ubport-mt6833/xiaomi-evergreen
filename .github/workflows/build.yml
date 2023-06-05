@@ -26,7 +26,6 @@ jobs:
 
       - name: Build device tarball
         run: |
-          ln -sf deviceinfo-${{ matrix.device }} deviceinfo
           ./build.sh
         
       - name: Upload build output
@@ -72,7 +71,6 @@ jobs:
 
       - name: Prepare fake OTA update
         run: |
-          ln -sf deviceinfo-${{ matrix.device }} deviceinfo
           DEVICE="$(source deviceinfo && echo $deviceinfo_codename)"
           ./build/prepare-fake-ota.sh out/device_${DEVICE}${DEV_TARBALL_VARIANT}.tar.xz ota
 
