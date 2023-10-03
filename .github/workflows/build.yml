@@ -41,7 +41,7 @@ jobs:
     strategy:
       matrix:
         device: [evergreen]
-        release: [xenial, focal]
+        release: [focal]
 
     env:
       ROOTFS_URL: ${{ matrix.release == 'focal'
@@ -97,7 +97,7 @@ jobs:
       strategy:
         matrix:
           device: [evergreen]
-          release: [xenial, focal]
+          release: [focal]
 
       steps:
         - uses: actions/download-artifact@v3
