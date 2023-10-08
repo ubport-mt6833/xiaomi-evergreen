@@ -85,7 +85,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
-          name: images-${{ matrix.device }}-${{ matrix.release }}
+          name: images-${{ matrix.device }}-${{ matrix.release }}-halium-12
           path: |
             out/boot.img
             out/ubuntu.img.xz
@@ -102,14 +102,14 @@ jobs:
       steps:
         - uses: actions/download-artifact@v3
           with:
-            name: images-${{ matrix.device }}-${{ matrix.release }}
+            name: images-${{ matrix.device }}-${{ matrix.release }}-halium-12
             path: out
 
         - name: release
           uses: marvinpinto/action-automatic-releases@6273874b61ebc8c71f1a61b2d98e234cf389b303
           with:
-            title: Ubuntu Touch ${{ matrix.release }}
-            automatic_release_tag: ${{ matrix.release }}
+            title: Ubuntu Touch ${{ matrix.release }} halium-12
+            automatic_release_tag: ${{ matrix.release }}-halium-12
             prerelease: false
             draft: false
             files: |
