@@ -20,3 +20,7 @@ nmcli device set wlan1 managed false || true
 # Enable WoWLAN to avoid network disconnect before suspend
 while [ ! -e /sys/class/ieee80211/phy0 ]; do sleep 1; done
 iw phy phy0 wowlan enable magic-packet
+
+# Set schedtune boost
+echo 20 > /sys/fs/cgroup/schedtune/schedtune.boost
+echo 1 > /sys/fs/cgroup/schedtune/schedtune.prefer_idle
