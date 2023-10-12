@@ -1,0 +1,7 @@
+# GBE
+service gbe /vendor/bin/gbe_HYBRIS_DISABLED
+    class main
+    disabled
+    user system
+    group system
+    override
